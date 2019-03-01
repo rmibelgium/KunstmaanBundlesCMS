@@ -44,7 +44,7 @@ class FormMailer implements FormMailerInterface
     {
         $request = $this->container->get('request_stack')->getCurrentRequest();
 
-        $toArr = explode("\r\n", $to);
+        $toArr = explode(",", $to);
 
         $message = (new Swift_Message($subject))
             ->setFrom($from)
